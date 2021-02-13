@@ -1,0 +1,9 @@
+.nav{
+display: flex;
+justify-content: space-between;
+}
+.icon{
+    color: #e6e7e6;
+    margin: 1rem;
+    cursor: pointer;
+}

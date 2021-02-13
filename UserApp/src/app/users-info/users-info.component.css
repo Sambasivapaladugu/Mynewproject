@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+  }
+th{
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+.container{
+    color: #e37a46;
+
+    background-color: #eeeeeef8;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.btn{
+    width: 100%;
+    background-color: #e37a46;
+}
+
+.search{
+ background-color: white;
+ border: 2px solid grey;
+ padding: 4px;
+}
+input{
+    border: 3px solid white;
+}
+

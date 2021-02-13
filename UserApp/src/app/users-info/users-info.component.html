@@ -1,0 +1,56 @@
+<div class="container">
+
+    <div>  <img src="assets/ico_users.svg" alt=""> <strong> &nbsp;Users</strong></div>
+    <div class="search">  
+        <form action="">
+            
+            <input type="search" id="search" name="search">
+            <label for="search">  &nbsp; <img src="assets/ico_search.svg" alt="">   Search</label>
+        </form>
+    </div>
+    <div> <button mat-raised-button class="btn" (click)="openDialog()">Add User</button></div>
+    
+</div>
+
+<button mat-flat-button color="accent" *ngIf="deletemsg">User has been deleted</button>
+<table mat-table [dataSource]="user" class="mat-elevation-z8">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    <!-- Role Column -->
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef> Role Type</th>
+      <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+    </ng-container>
+
+     <!-- Status Column -->
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action1">
+        <th mat-header-cell *matHeaderCellDef> Edit  </th>
+        <td mat-cell *matCellDef="let element"> <img src="assets\ico_edit.svg" alt="" (click)='editUser(element.id)' >  </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action2">
+        <th mat-header-cell *matHeaderCellDef> Delete</th>
+        <td mat-cell *matCellDef="let element">  <img src="assets\ico_close.svg" alt="" (click)='delete(element.id)'>  </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

@@ -1,0 +1,42 @@
+<span class="title">  <img src="assets\ico_users.svg" alt=""> &nbsp; Edit user</span>
+<button mat-flat-button color="accent"  *ngIf="opt" class="alert" (click)="diaClose()">Info Updated... click to close</button>
+
+<br>
+<div class="example-container" >
+    <form #userForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput name="name" [(ngModel)]="user.name">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" [(ngModel)]="user.email">
+      </mat-form-field>
+      <br>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Select Role</mat-label>
+        <mat-select  name="role" [(ngModel)]="user.role">
+          <mat-option  value="Admin">Admin</mat-option>
+          <mat-option value="Developer">Developer</mat-option>
+    </mat-select>
+      </mat-form-field>
+      <br>
+      
+    <mat-form-field appearance="fill">
+      <mat-label>Select Status</mat-label>
+      <mat-select name="status"  [(ngModel)]="user.status">
+        <mat-option value="Active">Active</mat-option>
+        <mat-option value="Inactive">Inactive</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+     <br>
+    <button mat-flat-button color="primary" class="btn" (click)="edit(user,userForm)">Edit User</button>
+
+</form>
+  </div>
+  
